@@ -1,0 +1,60 @@
+.contact {
+    grid-column: main-start/main-end;
+    padding    : 6vw;
+
+    &__container {
+        display              : grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        grid-template-rows   : minmax(min-content);
+        margin-top           : 4vw;
+        gap                  : 2vw;
+        @media only screen and(max-width:600px) {
+            grid-template-columns: repeat(1, minmax(1rem, 1fr));
+        }
+    }
+
+    &__icon {
+        height: 2rem;
+        width : 2rem;
+    }
+}
+
+.form {
+    display              : grid;
+    gap                  : 1vw;
+    grid-template-columns: repeat(2, minmax(20vw, 1fr));
+
+    @media only screen and(max-width:600px) {
+        grid-template-columns: repeat(1, minmax(1rem, 1fr));
+    }
+
+    &__name {
+     
+    }
+
+    &__email {
+     
+    }
+
+    &__message {
+        grid-column: 1/-1;
+
+        @media only screen and(max-width:600px) {
+            grid-column: 1/-1;
+        }
+    }
+
+    &__group {
+        padding: 1rem;
+    }
+
+    &__btn {
+        justify-self: end;
+        grid-column : 2/-1;
+        margin-top  : 1vw;
+
+        @media only screen and(max-width:600px) {
+            grid-column: 1/-1;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+.heading-style {
+    font-family: "segoe UI", arial, sans-serif;
+    font-weight: 400;
+
+}
+
+.heading-1 {
+    @extend .heading-style;
+    font-size     : 3rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-align    : center
+}
+
+.heading-2 {
+    @extend .heading-style;
+    font-size     : 2.5rem;
+    text-transform: capitalize;
+}
+
+.heading-3 {
+    @extend .heading-style;
+    font-size     : 1.8rem;
+    text-transform: capitalize;
+    font-style    : italic;
+    text-align    : center;
+    opacity       : .5;
+}
+
+.heading-4 {
+    @extend .heading-style;
+    font-size: 1.6rem;
+    margin   : 1.5rem 0;
+
+}

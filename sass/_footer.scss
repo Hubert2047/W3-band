@@ -1,0 +1,43 @@
+.footer {
+    grid-column: full-start/full-end;
+    display    : grid;
+    row-gap    : 2vw;
+
+    &__img {
+        width        : 100%;
+        margin-bottom: 5vw;
+    }
+
+    &__logos {
+        justify-self: center;
+
+        &:not(:last-child)>* {
+            margin-right: 2px;
+        }
+    }
+
+    &__logo {
+        fill  : $color-fourth;
+        width : 2rem;
+        height: 2rem;
+
+        &:hover {
+            fill: $color-tertiary;
+        }
+
+        &:active {
+            fill: $color-fourth;
+        }
+    }
+
+    &__copyright {
+        justify-self : center;
+        font-size    : 1.5rem;
+        color        : $color-fourth;
+        margin-bottom: 10vw;
+
+        & span {
+            border-bottom: 1px solid rgba($color-fourth, .5);
+        }
+    }
+}
