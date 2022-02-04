@@ -1,13 +1,16 @@
 .contact {
     grid-column: main-start/main-end;
-    padding    : 6vw;
+    padding    : 6vw 0;
 
     &__container {
-        display              : grid;
-        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-        grid-template-rows   : minmax(min-content);
-        margin-top           : 4vw;
-        gap                  : 2vw;
+        display                 : grid;
+        grid-template-columns   : minmax(min-content, 30rem) minmax(30rem, 35rem);
+        // grid-template-columns: 4fr 1fr;
+        grid-template-rows      : minmax(min-content);
+        margin-top              : 4vw;
+        gap                     : 2rem;
+        justify-content         : center;
+
         @media only screen and(max-width:600px) {
             grid-template-columns: repeat(1, minmax(1rem, 1fr));
         }
@@ -17,24 +20,41 @@
         height: 2rem;
         width : 2rem;
     }
+
+    &__information {
+        &-list {
+            display        : flex;
+            flex-direction : column;
+            gap            : 1rem;
+            justify-content: flex-start;
+
+        }
+
+        &-item {
+            display        : flex;
+            align-items    : center;
+            justify-content: flex-start;
+            gap            : 1rem;
+
+            & span {
+                font-size: 1.2rem;
+            }
+        }
+    }
 }
 
 .form {
     display              : grid;
     gap                  : 1vw;
-    grid-template-columns: repeat(2, minmax(20vw, 1fr));
+    grid-template-columns: repeat(2, minmax(min-content, 1fr));
 
     @media only screen and(max-width:600px) {
         grid-template-columns: repeat(1, minmax(1rem, 1fr));
     }
 
-    &__name {
-     
-    }
+    &__name {}
 
-    &__email {
-     
-    }
+    &__email {}
 
     &__message {
         grid-column: 1/-1;
@@ -45,7 +65,17 @@
     }
 
     &__group {
-        padding: 1rem;
+        padding: .8rem;
+        outline: none;
+        border : 1px solid $color-tertiary;
+
+        &:focus {
+            border-bottom: 2px solid $color-primary;
+
+            &:invalid {
+                border-bottom: 2px solid $color-secondary;
+            }
+        }
     }
 
     &__btn {
