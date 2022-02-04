@@ -1,28 +1,4 @@
-.heading-style, .heading-1, .heading-2, .heading-3, .heading-4 {
-  font-family: "segoe UI", arial, sans-serif;
-  font-weight: 400; }
-
-.heading-1 {
-  font-size: 3rem;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  text-align: center; }
-
-.heading-2 {
-  font-size: 2.5rem;
-  text-transform: capitalize; }
-
-.heading-3 {
-  font-size: 1.8rem;
-  text-transform: capitalize;
-  font-style: italic;
-  text-align: center;
-  opacity: .5; }
-
-.heading-4 {
-  font-size: 1.6rem;
-  margin: 1.5rem 0; }
-
+/* responsive */
 * {
   padding: 0;
   margin: 0;
@@ -31,6 +7,9 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
 
 body {
   font-family: "Lato", sans-serif;
@@ -66,6 +45,31 @@ body {
   .btn--black:active {
     background-color: #000;
     color: #ccc; }
+
+.heading-style, .heading-1, .heading-2, .heading-3, .heading-4 {
+  font-family: "segoe UI", arial, sans-serif;
+  font-weight: 400; }
+
+.heading-1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-align: center; }
+
+.heading-2 {
+  font-size: 2.5rem;
+  text-transform: capitalize; }
+
+.heading-3 {
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  font-style: italic;
+  text-align: center;
+  opacity: .5; }
+
+.heading-4 {
+  font-size: 1.6rem;
+  margin: 1.5rem 0; }
 
 .contact {
   grid-column: main-start/main-end;
@@ -138,6 +142,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between; }
+    @media only screen and (max-width: 37.5em) {
+      .header__nav > :not(:first-child) {
+        display: none; } }
     .header__nav-item {
       list-style: none;
       padding: 0 3rem;
@@ -168,8 +175,8 @@ body {
       display: flex;
       align-items: center; }
     .header__nav-icon {
-      height: 3rem;
-      width: 3rem;
+      height: 2.1rem;
+      width: 2.1rem;
       display: inline-block;
       fill: #fff; }
   .header__nav-item:hover .header__sub-nav {
@@ -196,21 +203,48 @@ body {
       letter-spacing: 1.5px;
       font-weight: 400;
       font-size: 1.3rem; }
-  .header__search {
+  .header__icon {
     height: 100%;
     display: flex;
-    padding: 0 2rem;
+    width: 6rem;
     border: none;
-    background-color: #000; }
-    .header__search-icon {
-      height: 2rem;
-      width: 2rem;
+    background-color: #000;
+    position: relative;
+    z-index: 1;
+    position: relative; }
+    .header__icon-search {
+      height: 100%;
+      width: 100%;
       fill: #fff;
-      align-self: center; }
-    .header__search:hover {
-      background-color: #f44336; }
-    .header__search:active {
-      background-color: #000; }
+      padding: 0 2rem;
+      margin-right: 2rem;
+      position: absolute;
+      top: 0;
+      left: 0; }
+      @media only screen and (max-width: 37.5em) {
+        .header__icon-search {
+          display: none; } }
+      .header__icon-search:hover {
+        background-color: #f44336; }
+      .header__icon-search:active {
+        background-color: #000; }
+    .header__icon-menu {
+      height: 100%;
+      width: 100%;
+      fill: #fff;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 1rem;
+      display: none; }
+      @media only screen and (max-width: 37.5em) {
+        .header__icon-menu {
+          display: block; } }
+      .header__icon-menu:hover {
+        background-color: #fff;
+        fill: #000; }
+      .header__icon-menu:active {
+        background-color: #000; }
 
 .tours {
   background-color: #000;
@@ -280,7 +314,7 @@ body {
   align-content: end;
   text-align: center;
   color: #fff;
-  row-gap: 1rem; }
+  row-gap: 1vw; }
   .slider__img {
     width: 100%;
     grid-column: 1/-1;
@@ -289,10 +323,16 @@ body {
   .slider__heading {
     grid-column: 1/-1;
     grid-row: 2/3; }
+    @media only screen and (max-width: 37.5em) {
+      .slider__heading {
+        display: none; } }
   .slider__text {
     grid-column: 1/-1;
     grid-row: 3/4;
     font-size: 1.4rem; }
+    @media only screen and (max-width: 37.5em) {
+      .slider__text {
+        display: none; } }
 
 .footer {
   grid-column: full-start/full-end;
