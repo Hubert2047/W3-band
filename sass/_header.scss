@@ -2,12 +2,51 @@
     background-color: $color-primary;
     grid-column     : full-start/full-end;
     display         : flex;
-    height          : 4.5rem;
+    height          : $header-top-height;
     justify-content : space-between;
     position        : fixed;
     top             : 0;
     left            : 0;
     width           : 100%;
+    font-size       : 1.4rem;
+
+    &__navbar-mini-radio {
+        display: none;
+    }
+
+    &__navbar-mini-radio:checked+&__navbar-mini {
+        display: block;
+    }
+
+    &__navbar-mini {
+        position        : absolute;
+        top             : 0;
+        left            : 0;
+        width           : 100%;
+        margin-top      : $header-top-height;
+        background-color: $color-primary;
+        display         : none;
+
+        &-item {
+            list-style: none;
+            @include header-item-padding;
+            color: $color-white;
+
+            &:hover {
+                background-color: $color-tertiary;
+                color           : $color-primary
+            }
+
+            &:active {
+                background-color: $color-primary;
+                color           : $color-white;
+            }
+        }
+
+        &-link {
+            @extend .header-link-style;
+        }
+    }
 
     &__nav {
         display        : flex;
@@ -15,35 +54,29 @@
         justify-content: space-between;
 
         @media only screen and(max-width:$bp-small) {
-            & > :not(:first-child) {
+            &> :not(:first-child) {
                 display: none;
             }
         }
 
         &-item {
-            list-style : none;
-            padding    : 0 3rem;
+            list-style: none;
+            @include header-item-padding;
             height     : 100%;
             display    : flex;
             align-items: center;
             position   : relative;
             flex       : 1;
+            color      : $color-white;
 
             &:hover {
                 background-color: $color-tertiary;
+                color           : $color-primary;
             }
 
             &:active {
                 background-color: $color-primary;
             }
-        }
-
-        &-item:hover &-link {
-            color: $color-primary;
-        }
-
-        &-item:active &-link {
-            color: $color-tertiary;
         }
 
         &-item:hover &-icon {
@@ -55,14 +88,8 @@
         }
 
         &-link {
-            text-decoration: none;
-            color          : $color-white;
-            text-transform : uppercase;
-            font-weight    : 400;
-            font-size      : 1.4rem;
-            letter-spacing : 1px;
-            display        : flex;
-            align-items    : center;
+            @extend .header-link-style;
+            display: flex;
 
         }
 

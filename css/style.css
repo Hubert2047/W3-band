@@ -1,4 +1,12 @@
 /* responsive */
+.header-link-style, .header__navbar-mini-link, .header__nav-link {
+  text-decoration: none;
+  color: currentColor;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.4rem;
+  letter-spacing: 1px; }
+
 * {
   padding: 0;
   margin: 0;
@@ -137,7 +145,30 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%; }
+  width: 100%;
+  font-size: 1.4rem; }
+  .header__navbar-mini-radio {
+    display: none; }
+  .header__navbar-mini-radio:checked + .header__navbar-mini {
+    display: block; }
+  .header__navbar-mini {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 4.5rem;
+    background-color: #000;
+    display: none; }
+    .header__navbar-mini-item {
+      list-style: none;
+      padding: 1.2rem 3rem;
+      color: #fff; }
+      .header__navbar-mini-item:hover {
+        background-color: #ccc;
+        color: #000; }
+      .header__navbar-mini-item:active {
+        background-color: #000;
+        color: #fff; }
   .header__nav {
     display: flex;
     align-items: center;
@@ -147,33 +178,24 @@ body {
         display: none; } }
     .header__nav-item {
       list-style: none;
-      padding: 0 3rem;
+      padding: 1.2rem 3rem;
       height: 100%;
       display: flex;
       align-items: center;
       position: relative;
-      flex: 1; }
+      flex: 1;
+      color: #fff; }
       .header__nav-item:hover {
-        background-color: #ccc; }
+        background-color: #ccc;
+        color: #000; }
       .header__nav-item:active {
         background-color: #000; }
-    .header__nav-item:hover .header__nav-link {
-      color: #000; }
-    .header__nav-item:active .header__nav-link {
-      color: #ccc; }
     .header__nav-item:hover .header__nav-icon {
       fill: #000; }
     .header__nav-item:active .header__nav-icon {
       fill: #ccc; }
     .header__nav-link {
-      text-decoration: none;
-      color: #fff;
-      text-transform: uppercase;
-      font-weight: 400;
-      font-size: 1.4rem;
-      letter-spacing: 1px;
-      display: flex;
-      align-items: center; }
+      display: flex; }
     .header__nav-icon {
       height: 2.1rem;
       width: 2.1rem;

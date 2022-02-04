@@ -13,6 +13,14 @@
     <div class="container">
         <!-- start header -->
         <header class="header">
+            <!-- navbar on small screen -->
+            <input type="checkbox" class="header__navbar-mini-radio" id="header__navbar-mini-radio">
+            <ul class="header__navbar-mini">
+                <li class="header__navbar-mini-item"><a class="header__navbar-mini-link" href="#">band</a></li>
+                <li class="header__navbar-mini-item"><a class="header__navbar-mini-link" href="#">tour</a></li>
+                <li class="header__navbar-mini-item"><a class="header__navbar-mini-link" href="#">contact</a></li>
+                <li class="header__navbar-mini-item"><a class="header__navbar-mini-link" href="#">merch</a></li>
+            </ul>
             <ul class="header__nav">
                 <li class="header__nav-item"><a href="#" class="header__nav-link">home</a></li>
                 <li class=" header__nav-item"><a href="#" class="header__nav-link">band</a></li>
@@ -39,9 +47,11 @@
                 <svg class="header__icon-search">
                     <use xlink:href="img/sprite.svg#icon-search"></use>
                 </svg>
-                <svg class="header__icon-menu">
-                    <use xlink:href="img/sprite.svg#icon-menu"></use>
-                </svg>
+                <label for="header__navbar-mini-radio" class="header__navbar-mini-btn">
+                    <svg class="header__icon-menu">
+                        <use xlink:href="img/sprite.svg#icon-menu"></use>
+                    </svg>
+                </label>
             </button>
         </header>
         <!-- end header -->
@@ -153,14 +163,14 @@
 
                     <div class="contact__information-item">
                         <svg class="contact__icon">
-                            <use xlink:href="img/sprite.svg#icon-mail4"></use>
+                            <use xlink:href="img/sprite.svg#icon-phone"></use>
                         </svg>
                         <span class="contact__text">Phone: +00 151515</span>
                     </div>
 
                     <div class="contact__information-item">
                         <svg class="contact__icon">
-                            <use xlink:href="img/sprite.svg#icon-phone"></use>
+                            <use xlink:href="img/sprite.svg#icon-mail"></use>
                         </svg>
                         <span class="contact__text">Email: mail@mail.com</span>
                     </div>
