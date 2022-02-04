@@ -73,7 +73,7 @@ body {
 
 .btn {
   border: none;
-  padding: 1vw 1.8vw;
+  padding: 1rem 1.8rem;
   background-color: transparent;
   font-size: 1.5rem;
   cursor: pointer; }
@@ -165,7 +165,7 @@ body {
   background-color: #000;
   grid-column: full-start/full-end;
   display: flex;
-  height: 4.5rem;
+  height: 5rem;
   justify-content: space-between;
   position: fixed;
   top: 0;
@@ -181,7 +181,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    margin-top: 4.5rem;
+    margin-top: 5rem;
     background-color: #000;
     display: none; }
     .header__navbar-mini-item {
@@ -483,8 +483,8 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr) repeat(2, min-content) repeat(3, 1fr);
     background-color: #009688;
-    padding-bottom: 2vw;
-    column-gap: 1vw;
+    padding-bottom: 4rem;
+    column-gap: 2rem;
     align-items: center;
     color: #fff; }
     .ticket__header-close-btn {

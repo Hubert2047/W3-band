@@ -39,8 +39,8 @@
         display              : grid;
         grid-template-columns: repeat(3, 1fr) repeat(2, min-content) repeat(3, 1fr);
         background-color     : $color-fifth;
-        padding-bottom       : 2vw;
-        column-gap           : 1vw;
+        padding-bottom       : 4rem;
+        column-gap           : 2rem;
         align-items          : center;
         color                : $color-white;
 

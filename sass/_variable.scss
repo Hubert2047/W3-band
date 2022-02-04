@@ -3,7 +3,7 @@ $color-secondary:#f44336;
 $color-tertiary :#ccc;
 $color-white    :#fff;
 $color-fourth   :#757575;
-$color-fifth:#009688;
+$color-fifth    :#009688;
 
 
 /* responsive */
@@ -14,12 +14,12 @@ $bp-small :43.75em; //600px
 
 
 .header-link-style {
-    text-decoration   : none;
-    color             : currentColor;
-    text-transform    : uppercase;
-    font-weight       : 400;
-    font-size         : 1.4rem;
-    letter-spacing    : 1px;
+    text-decoration: none;
+    color          : currentColor;
+    text-transform : uppercase;
+    font-weight    : 400;
+    font-size      : 1.4rem;
+    letter-spacing : 1px;
 }
 
-$header-top-height:4.5rem;
+$header-top-height:5rem;
