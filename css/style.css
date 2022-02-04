@@ -85,12 +85,12 @@ body {
   padding: 6vw 0; }
   .contact__container {
     display: grid;
-    grid-template-columns: minmax(min-content, 30rem) minmax(30rem, 35rem);
+    grid-template-columns: minmax(min-content, 30rem) minmax(min-content, 32rem);
     grid-template-rows: minmax(min-content);
     margin-top: 4vw;
     gap: 2rem;
     justify-content: center; }
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 43.75em) {
       .contact__container {
         grid-template-columns: repeat(1, minmax(1rem, 1fr)); } }
   .contact__icon {
@@ -112,13 +112,13 @@ body {
 .form {
   display: grid;
   gap: 1vw;
-  grid-template-columns: repeat(2, minmax(min-content, 1fr)); }
-  @media only screen and (max-width: 600px) {
+  grid-template-columns: repeat(2, 1fr); }
+  @media only screen and (max-width: 43.75em) {
     .form {
       grid-template-columns: repeat(1, minmax(1rem, 1fr)); } }
   .form__message {
     grid-column: 1/-1; }
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 43.75em) {
       .form__message {
         grid-column: 1/-1; } }
   .form__group {
@@ -133,7 +133,7 @@ body {
     justify-self: end;
     grid-column: 2/-1;
     margin-top: 1vw; }
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 43.75em) {
       .form__btn {
         grid-column: 1/-1; } }
 
@@ -174,7 +174,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between; }
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-width: 43.75em) {
       .header__nav > :not(:first-child) {
         display: none; } }
     .header__nav-item {
@@ -244,7 +244,7 @@ body {
       position: absolute;
       top: 0;
       left: 0; }
-      @media only screen and (max-width: 37.5em) {
+      @media only screen and (max-width: 43.75em) {
         .header__icon-search {
           display: none; } }
       .header__icon-search:hover {
@@ -260,7 +260,7 @@ body {
       left: 0;
       padding: 1rem;
       display: none; }
-      @media only screen and (max-width: 37.5em) {
+      @media only screen and (max-width: 43.75em) {
         .header__icon-menu {
           display: block; } }
       .header__icon-menu:hover {
@@ -346,14 +346,14 @@ body {
   .slider__heading {
     grid-column: 1/-1;
     grid-row: 2/3; }
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-width: 43.75em) {
       .slider__heading {
         display: none; } }
   .slider__text {
     grid-column: 1/-1;
     grid-row: 3/4;
     font-size: 1.4rem; }
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-width: 43.75em) {
       .slider__text {
         display: none; } }
 

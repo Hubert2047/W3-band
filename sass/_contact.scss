@@ -4,14 +4,13 @@
 
     &__container {
         display                 : grid;
-        grid-template-columns   : minmax(min-content, 30rem) minmax(30rem, 35rem);
-        // grid-template-columns: 4fr 1fr;
+        grid-template-columns   : minmax(min-content, 30rem) minmax(min-content, 32rem);
         grid-template-rows      : minmax(min-content);
         margin-top              : 4vw;
         gap                     : 2rem;
         justify-content         : center;
 
-        @media only screen and(max-width:600px) {
+        @media only screen and(max-width:$bp-small) {
             grid-template-columns: repeat(1, minmax(1rem, 1fr));
         }
     }
@@ -46,9 +45,9 @@
 .form {
     display              : grid;
     gap                  : 1vw;
-    grid-template-columns: repeat(2, minmax(min-content, 1fr));
+    grid-template-columns: repeat(2, 1fr);
 
-    @media only screen and(max-width:600px) {
+    @media only screen and(max-width:$bp-small) {
         grid-template-columns: repeat(1, minmax(1rem, 1fr));
     }
 
@@ -59,7 +58,7 @@
     &__message {
         grid-column: 1/-1;
 
-        @media only screen and(max-width:600px) {
+        @media only screen and(max-width:$bp-small) {
             grid-column: 1/-1;
         }
     }
@@ -83,7 +82,7 @@
         grid-column : 2/-1;
         margin-top  : 1vw;
 
-        @media only screen and(max-width:600px) {
+        @media only screen and(max-width:$bp-small) {
             grid-column: 1/-1;
         }
     }
