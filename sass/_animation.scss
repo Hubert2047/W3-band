@@ -1,0 +1,11 @@
+@keyframes animate-top {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        top    : 50%;
+        opacity: 1;
+    }
+}

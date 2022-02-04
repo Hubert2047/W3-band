@@ -4,7 +4,7 @@
 
     &__container {
         display                 : grid;
-        grid-template-columns   : minmax(min-content, 30rem) minmax(min-content, 32rem);
+        grid-template-columns   : minmax(min-content, 30rem) minmax(min-content, 38rem);
         grid-template-rows      : minmax(min-content);
         margin-top              : 4vw;
         gap                     : 2rem;
@@ -51,10 +51,6 @@
         grid-template-columns: repeat(1, minmax(1rem, 1fr));
     }
 
-    &__name {}
-
-    &__email {}
-
     &__message {
         grid-column: 1/-1;
 
@@ -65,16 +61,7 @@
 
     &__group {
         padding: .8rem;
-        outline: none;
         border : 1px solid $color-tertiary;
-
-        &:focus {
-            border-bottom: 2px solid $color-primary;
-
-            &:invalid {
-                border-bottom: 2px solid $color-secondary;
-            }
-        }
     }
 
     &__btn {

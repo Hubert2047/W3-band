@@ -1,0 +1,59 @@
+.btn {
+    border          : none;
+    padding         : 1vw 1.8vw;
+    background-color: transparent;
+    font-size       : 1.5rem;
+    cursor          : pointer;
+}
+
+.btn:link {
+    text-decoration: none;
+}
+
+.btn--black {
+    background-color: $color-primary;
+    color           : $color-white;
+
+    &:hover {
+        background-color: $color-tertiary;
+        color           : $color-primary;
+    }
+
+    &:active {
+        background-color: $color-primary;
+        color           : $color-tertiary;
+    }
+}
+
+.btn--red {
+    background-color: $color-secondary;
+    color           : $color-white;
+
+    &:hover {
+        background-color: $color-tertiary;
+        color           : $color-primary;
+    }
+
+    &:active {
+        background-color: $color-secondary;
+        color           : $color-white;
+    }
+}
+
+.input {
+    &--invalid {
+        outline: none;
+        border : none;
+
+        &:focus {
+            border-bottom: 2px solid $color-fifth;
+
+            &:not(:placeholder-shown) {
+                &:invalid {
+                    border-bottom: 2px solid $color-secondary;
+                }
+            }
+        }
+
+    }
+}

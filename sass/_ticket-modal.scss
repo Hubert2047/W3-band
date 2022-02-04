@@ -1,0 +1,164 @@
+.ticket-modal {
+    position        : fixed;
+    top             : 0;
+    left            : 0;
+    bottom          : 0;
+    right           : 0;
+    background-color: rgba($color-tertiary, .8);
+    z-index         : 1;
+    display         : none;
+
+    &:target {
+        display: block;
+    }
+
+
+}
+
+
+
+.ticket {
+    display       : flex;
+    flex-direction: column;
+    position      : absolute;
+    top           : -50%;
+    left          : 50%;
+    transform     : translate(-50%, -50%);
+    width         : 70%;
+
+    @media only screen and (max-width:$bp-medium) {
+        width: 90%;
+    }
+
+    background-color : $color-white;
+    z-index          : 10;
+    box-shadow       : 0 1rem 2rem rgba($color-primary, .5);
+    animation        : animate-top .5s ease forwards;
+
+    &__header {
+        display              : grid;
+        grid-template-columns: repeat(3, 1fr) repeat(2, min-content) repeat(3, 1fr);
+        background-color     : $color-fifth;
+        padding-bottom       : 2vw;
+        column-gap           : 1vw;
+        align-items          : center;
+        color                : $color-white;
+
+
+        &-close-btn {
+            grid-column     : -2/-1;
+            height          : 4rem;
+            width           : 4rem;
+            justify-self    : end;
+            border          : none;
+            background-color: transparent;
+            font-size       : 1.6rem;
+            color           : currentColor;
+            text-decoration : none;
+            display         : flex;
+            justify-content : center;
+            align-items     : center;
+
+            @media only screen and (max-width:$bp-small) {
+                height: 3rem;
+                width : 3rem;
+            }
+
+            &:hover {
+                background-color: $color-tertiary;
+                color           : $color-primary;
+            }
+
+            &:active {
+                background-color: $color-fifth;
+                color           : $color-tertiary;
+            }
+
+            cursor: pointer;
+        }
+
+        &-icon {
+            height     : 4rem;
+            width      : 4rem;
+            grid-column: 4/5;
+
+            @media only screen and (max-width:$bp-small) {
+                height: 3rem;
+                width : 3rem;
+            }
+
+            fill : currentColor;
+
+        }
+
+        &-heading {
+            grid-column: 5/6;
+            font-size  : 3rem;
+        }
+    }
+
+    &__content {
+        padding       : 1.5vw;
+        display       : flex;
+        flex-direction: column;
+        row-gap       : 1vw;
+    }
+
+    &__group-text {
+        display    : flex;
+        align-items: center;
+        column-gap : .5vw;
+        font-size  : 1.5rem;
+        font-weight: 500;
+        color      : $color-primary;
+
+        &-icon {
+            height: 2rem;
+            width : 2rem;
+        }
+
+    }
+
+    &__group-input {
+        padding  : 1rem;
+        border   : 1px solid $color-tertiary;
+        font-size: 1.5rem;
+    }
+
+    &__submit {
+        padding         : 1vw;
+        border          : none;
+        background-color: $color-fifth;
+        color           : $color-white;
+        font-size       : 1.7rem;
+        text-transform  : uppercase;
+        font-weight     : 500;
+        cursor          : pointer;
+
+        &:hover {
+            background-color: $color-tertiary;
+            color           : $color-primary;
+        }
+
+        &:active {
+            background-color: $color-fifth;
+            color           : $color-tertiary;
+        }
+    }
+
+    &__footer {
+        display        : flex;
+        justify-content: space-between;
+        padding        : 0 2vw 2vw 2vw;
+    }
+
+    &__help {
+        display   : flex;
+        column-gap: .5rem;
+
+        & p {
+            color          : #2196F3;
+            text-decoration: underline;
+        }
+    }
+}

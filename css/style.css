@@ -30,6 +30,13 @@ body {
   grid-template-rows: repeat(5, min-content);
   grid-template-columns: [full-start] minmax(2rem, 1fr) [main-start] repeat(8, minmax(1rem, 10rem)) [main-end] minmax(2rem, 1fr) [full-end]; }
 
+@keyframes animate-top {
+  from {
+    opacity: 0; }
+  to {
+    top: 50%;
+    opacity: 1; } }
+
 .color-white {
   color: #fff; }
 
@@ -38,22 +45,6 @@ body {
 
 .mg-botton-small {
   margin-bottom: 2rem; }
-
-.btn {
-  border: none;
-  border-radius: 0;
-  padding: .8rem 1.6rem;
-  font-size: 1.5rem; }
-
-.btn--black {
-  background-color: #000;
-  color: #fff; }
-  .btn--black:hover {
-    background-color: #ccc;
-    color: #000; }
-  .btn--black:active {
-    background-color: #000;
-    color: #ccc; }
 
 .heading-style, .heading-1, .heading-2, .heading-3, .heading-4 {
   font-family: "segoe UI", arial, sans-serif;
@@ -80,12 +71,50 @@ body {
   font-size: 1.6rem;
   margin: 1.5rem 0; }
 
+.btn {
+  border: none;
+  padding: 1vw 1.8vw;
+  background-color: transparent;
+  font-size: 1.5rem;
+  cursor: pointer; }
+
+.btn:link {
+  text-decoration: none; }
+
+.btn--black {
+  background-color: #000;
+  color: #fff; }
+  .btn--black:hover {
+    background-color: #ccc;
+    color: #000; }
+  .btn--black:active {
+    background-color: #000;
+    color: #ccc; }
+
+.btn--red {
+  background-color: #f44336;
+  color: #fff; }
+  .btn--red:hover {
+    background-color: #ccc;
+    color: #000; }
+  .btn--red:active {
+    background-color: #f44336;
+    color: #fff; }
+
+.input--invalid {
+  outline: none;
+  border: none; }
+  .input--invalid:focus {
+    border-bottom: 2px solid #009688; }
+    .input--invalid:focus:not(:placeholder-shown):invalid {
+      border-bottom: 2px solid #f44336; }
+
 .contact {
   grid-column: main-start/main-end;
   padding: 6vw 0; }
   .contact__container {
     display: grid;
-    grid-template-columns: minmax(min-content, 30rem) minmax(min-content, 32rem);
+    grid-template-columns: minmax(min-content, 30rem) minmax(min-content, 38rem);
     grid-template-rows: minmax(min-content);
     margin-top: 4vw;
     gap: 2rem;
@@ -123,12 +152,7 @@ body {
         grid-column: 1/-1; } }
   .form__group {
     padding: .8rem;
-    outline: none;
     border: 1px solid #ccc; }
-    .form__group:focus {
-      border-bottom: 2px solid #000; }
-      .form__group:focus:invalid {
-        border-bottom: 2px solid #f44336; }
   .form__btn {
     justify-self: end;
     grid-column: 2/-1;
@@ -311,20 +335,33 @@ body {
 .tours__list-card {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-template-rows: min-content;
   gap: 1rem; }
+  @media only screen and (max-width: 43.75em) {
+    .tours__list-card {
+      display: flex;
+      flex-direction: column; } }
 
 .card {
-  background-color: #fff; }
+  background-color: #fff;
+  display: grid;
+  grid-template-rows: min-content 1fr; }
   .card__img {
-    width: 100%; }
+    width: 100%;
+    height: 16rem; }
+    @media only screen and (max-width: 43.75em) {
+      .card__img {
+        height: auto; } }
   .card__content {
-    padding: 0 1.6rem; }
+    padding: 2vw 1.5rem; }
     .card__content:not(:first-child) > * {
-      margin-bottom: 1rem; }
+      margin-bottom: 1vw; }
   .card__date {
     font-size: 1.4rem; }
   .card__text {
     font-size: 1.3rem; }
+    .card__text:nth-child(3) {
+      margin-bottom: 2vw; }
 
 .sliders {
   grid-column: full-start/full-end;
@@ -414,3 +451,119 @@ body {
     border-radius: 4px;
     overflow: hidden;
     object-fit: cover; }
+
+.ticket-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(204, 204, 204, 0.8);
+  z-index: 1;
+  display: none; }
+  .ticket-modal:target {
+    display: block; }
+
+.ticket {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  background-color: #fff;
+  z-index: 10;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+  animation: animate-top .5s ease forwards; }
+  @media only screen and (max-width: 56.25em) {
+    .ticket {
+      width: 90%; } }
+  .ticket__header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) repeat(2, min-content) repeat(3, 1fr);
+    background-color: #009688;
+    padding-bottom: 2vw;
+    column-gap: 1vw;
+    align-items: center;
+    color: #fff; }
+    .ticket__header-close-btn {
+      grid-column: -2/-1;
+      height: 4rem;
+      width: 4rem;
+      justify-self: end;
+      border: none;
+      background-color: transparent;
+      font-size: 1.6rem;
+      color: currentColor;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer; }
+      @media only screen and (max-width: 43.75em) {
+        .ticket__header-close-btn {
+          height: 3rem;
+          width: 3rem; } }
+      .ticket__header-close-btn:hover {
+        background-color: #ccc;
+        color: #000; }
+      .ticket__header-close-btn:active {
+        background-color: #009688;
+        color: #ccc; }
+    .ticket__header-icon {
+      height: 4rem;
+      width: 4rem;
+      grid-column: 4/5;
+      fill: currentColor; }
+      @media only screen and (max-width: 43.75em) {
+        .ticket__header-icon {
+          height: 3rem;
+          width: 3rem; } }
+    .ticket__header-heading {
+      grid-column: 5/6;
+      font-size: 3rem; }
+  .ticket__content {
+    padding: 1.5vw;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1vw; }
+  .ticket__group-text {
+    display: flex;
+    align-items: center;
+    column-gap: .5vw;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #000; }
+    .ticket__group-text-icon {
+      height: 2rem;
+      width: 2rem; }
+  .ticket__group-input {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    font-size: 1.5rem; }
+  .ticket__submit {
+    padding: 1vw;
+    border: none;
+    background-color: #009688;
+    color: #fff;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer; }
+    .ticket__submit:hover {
+      background-color: #ccc;
+      color: #000; }
+    .ticket__submit:active {
+      background-color: #009688;
+      color: #ccc; }
+  .ticket__footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2vw 2vw 2vw; }
+  .ticket__help {
+    display: flex;
+    column-gap: .5rem; }
+    .ticket__help p {
+      color: #2196F3;
+      text-decoration: underline; }
