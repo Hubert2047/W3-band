@@ -8,6 +8,10 @@
     z-index         : 1;
     display         : none;
 
+    &.open {
+        display: block;
+    }
+
     &:target {
         display: block;
     }
